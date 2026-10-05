@@ -58,3 +58,121 @@ body {
       color: #FFCD00;
     border-bottom: 2px solid #FFCD00;
 }
+
+.banner-principal {
+    width: 100%;
+    background-color: #0000b3;
+    display: flex;
+    justify-content: center;
+    padding: 60px 0;
+    flex-grow: 1;
+}
+
+.conteudo-banner {
+    width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    box-sizing: border-box;
+    gap: 40px;
+}
+
+.texto-principal {
+    max-width: 500px;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+.texto-principal h1 {
+    font-size: 2.8rem;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.destaque-amarelo {
+    color: #FFCD00;
+}
+
+.texto-principal p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin-bottom: 30px;
+    color: #e0e0e0;
+}
+
+.botoes-acao {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-amarelo {
+    background-color: #FFCD00;
+    color: #000086;
+    border: none;
+    padding: 12px 24px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.btn-amarelo:hover {
+    color: #fff;
+    background-color: #21104c;
+    transform: scale(1.02);
+}
+
+.btn-branco {
+    background-color: #ffffff;
+    color: #000086;
+    border: none;
+    padding: 12px 24px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.btn-branco:hover {
+    color: #fff;
+    background-color: #211e4c;
+    transform: scale(1.02);
+}
+
+/* Card com Borda Arredondada e Lista */
+.card-beneficios {
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 12px;
+    padding: 30px 35px;
+    max-width: 480px;
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+.card-beneficios ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.card-beneficios li {
+    color: #ffffff;
+    font-size: 1.05rem;
+    font-family: Arial, sans-serif;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.card-beneficios li:last-child {
+    margin-bottom: 0;
+}
+
+.icone-check {
+    font-size: 1.1rem;
+}
