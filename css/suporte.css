@@ -1,0 +1,198 @@
+body {
+    margin: auto 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;    
+    justify-content: flex-start; 
+    align-items: center;       
+    background-color: #f0f0f0; 
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000086;
+    padding: 15px 5%;
+    width: 1200px;
+    min-height: 75px;
+    position: relative;
+    margin-left: -60px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo img {
+    width: 100%;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.menu-de-denuncia {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-right: 40px;
+}
+
+.botao-menu {
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #000086;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 8px 12px;
+    border: 2px solid #000086;
+    border-radius: 5px;
+    transition: color 0.3s, border-bottom 0.3s;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.botao-menu:hover {
+      color: #FFCD00;
+    border-bottom: 2px solid #FFCD00;
+}
+
+.container-suporte {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 50px 20px;
+    box-sizing: border-box;
+    flex-grow: 1;
+}
+
+.grid-suporte {
+    width: 100%;
+    max-width: 1100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.card-suporte {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.15);
+    box-sizing: border-box;
+}
+
+.titulo-secao {
+    color: #0000b3;
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin: 0 0 10px 0;
+}
+
+.subtitulo-secao {
+    color: #666666;
+    font-size: 0.95rem;
+    margin: 0 0 30px 0;
+    line-height: 1.4;
+}
+
+/* Estilos da Lista de FAQ */
+.lista-faq {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.item-faq {
+    background-color: #f8f9fa;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    color: #1a1a1a;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.item-faq:hover {
+    background-color: #f1f5f9;
+    border-color: #cbd5e1;
+}
+
+.icone-expandir {
+    color: #0000b3;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Estilos do Formulário de Contato */
+.form-suporte {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.grupo-campo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.grupo-campo label {
+    font-weight: bold;
+    color: #111111;
+    font-size: 0.95rem;
+}
+
+.campo-input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    color: #333333;
+    outline: none;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    transition: border-color 0.2s;
+}
+
+.campo-input:focus {
+    border-color: #0000b3;
+}
+
+.campo-input::placeholder {
+    color: #888888;
+}
+
+.campo-textarea {
+    min-height: 160px;
+    resize: vertical;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.btn-enviar-suporte {
+    background-color: #FFCD00;
+    color: #000000;
+    border: none;
+    padding: 14px 20px;
+    font-weight: bold;
+    font-size: 0.95rem;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 5px;
+    transition: background-color 0.2s;
+}
+
+.btn-enviar-suporte:hover {
+    background-color: #e6b800;
+}
