@@ -1,0 +1,126 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0000b3; /* Fundo azul padronizado */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container-login {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
+.card-login {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 650px;
+    border-radius: 16px;
+    padding: 40px 45px;
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+}
+
+.titulo-login {
+    color: #0000b3;
+    font-size: 2rem;
+    font-weight: 800;
+    margin: 0 0 8px 0;
+}
+
+.subtitulo-login {
+    color: #666666;
+    font-size: 0.95rem;
+    margin: 0 0 25px 0;
+}
+
+/* Formulário e Campos */
+.form-login {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.grupo-campo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+}
+
+.grupo-campo label {
+    font-weight: bold;
+    color: #111111;
+    font-size: 0.9rem;
+}
+
+.campo-input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    color: #333333;
+    outline: none;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    transition: border-color 0.2s;
+}
+
+.campo-input:focus {
+    border-color: #0000b3;
+}
+
+.campo-input::placeholder {
+    color: #888888;
+}
+
+/* Disposição em duas colunas */
+.linha-dupla {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+}
+
+/* Botão Entrar */
+.btn-entrar-sistema {
+    background-color: #FFCD00;
+    color: #000000;
+    border: none;
+    padding: 14px 20px;
+    font-weight: bold;
+    font-size: 0.95rem;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    transition: background-color 0.2s;
+}
+
+.btn-entrar-sistema:hover {
+    background-color: #e6b800;
+}
+
+/* Estilização para transformar os links do menu em botões estilizados */
+.menu-de-denuncia a.botao-menu {
+    text-decoration: none;
+    display: inline-block;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.menu-de-denuncia a.botao-menu.ativo,
+.menu-de-denuncia a.botao-menu:hover {
+    color: #FFCD00 !important;
+    border-bottom: 2px solid #FFCD00 !important;
+}

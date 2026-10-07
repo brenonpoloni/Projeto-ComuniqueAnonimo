@@ -1,43 +1,26 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comunique Anônimo</title>
+    <title>Comunique Anônimo - Início</title>
     <link rel="stylesheet" href="css/estilo.css">
 </head>
-
 <body>
 
-    <header>
-
-        <div class="topo"> 
-
-            <div class="logo">
-                <img src="imagem/logocomunique.png" alt="Logo Comunique Anônimo">
-            </div>
-           
-            <div class="menu-de-denuncia">
-                <button class="botao-menu">INÍCIO</button>
-                <button class="botao-menu">DENUNCIAR</button>
-                <button class="botao-menu">CONTA</button>
-                <button class="botao-menu">SUPORTE</button>
-            </div>
-
-        </div>
-
-    </header>
+    <?php include 'header.php'; ?>
 
     <main class="banner-principal">
         <div class="conteudo-banner">
-            
             <div class="texto-principal">
                 <h1>SUA VOZ!<br><span class="destaque-amarelo">SEM RISCOS!</span></h1>
                 <p>Denuncie riscos de segurança e saúde no trabalho de forma completamente anônima. Protegemos sua identidade em todas as etapas.</p>
+                
+                <!-- BOTÕES CONECTADOS -->
                 <div class="botoes-acao">
-                    <button class="btn-amarelo">FAZER DENÚNCIA</button>
-                    <button class="btn-branco">SAIBA MAIS</button>
+                    <a href="denuncia.php" class="btn-amarelo" style="text-decoration:none; display:inline-block;">FAZER DENÚNCIA</a>
+                    <a href="suporte.php" class="btn-branco" style="text-decoration:none; display:inline-block;">SAIBA MAIS</a>
                 </div>
             </div>
 
@@ -51,21 +34,9 @@
                     <li><span class="icone-check">✅</span> Suporte jurídico disponível 24h</li>
                 </ul>
             </div>
-
         </div>
     </main>
 
-
-
+    <script src="script.js"></script>
 </body>
-
-
-
-
-
-
-
-
-
-
 </html>

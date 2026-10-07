@@ -176,3 +176,20 @@ body {
 .icone-check {
     font-size: 1.1rem;
 }
+
+/* Estilização para transformar os links do menu em botões estilizados */
+.menu-de-denuncia a.botao-menu {
+    text-decoration: none;
+    display: inline-block;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.menu-de-denuncia a.botao-menu.ativo,
+.menu-de-denuncia a.botao-menu:hover {
+    color: #FFCD00 !important;
+    border-bottom: 2px solid #FFCD00 !important;
+}
