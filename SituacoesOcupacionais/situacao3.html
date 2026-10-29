@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Situação 3</title>
+  <style>
+    :root {
+      --bg: #ecfeff;
+      --card: #ffffff;
+      --cyan: #0891b2;
+      --azul: #0f172a;
+      --cinza: #536074;
+      --borda: #cfeaf4;
+      --destaque: #f0fdfa;
+      --sombra: 0 18px 40px rgba(8, 145, 178, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, #ecfeff 0%, #f8fafc 100%);
+      color: var(--azul);
+    }
+
+    .container {
+      max-width: 980px;
+      margin: 48px auto;
+      padding: 24px;
+    }
+
+    .hero {
+      background: var(--card);
+      border: 1px solid var(--borda);
+      border-radius: 24px;
+      box-shadow: var(--sombra);
+      overflow: hidden;
+    }
+
+    .hero-top {
+      background: linear-gradient(135deg, var(--cyan) 0%, #06b6d4 100%);
+      color: white;
+      padding: 32px 30px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    h1 {
+      margin: 18px 0 10px;
+      font-size: clamp(2rem, 4vw, 3rem);
+    }
+
+    .subtitulo {
+      margin: 0;
+      font-size: 1rem;
+      opacity: 0.96;
+      max-width: 700px;
+      line-height: 1.6;
+    }
+
+    .content {
+      padding: 28px 30px 38px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--destaque);
+      border: 1px solid var(--borda);
+      border-radius: 18px;
+      padding: 22px 20px;
+    }
+
+    .card h2 {
+      margin-top: 0;
+      font-size: 1.1rem;
+      color: var(--azul);
+    }
+
+    .card p, .card li {
+      color: var(--cinza);
+      line-height: 1.6;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .alerta {
+      background: #ecfeff;
+      border: 1px solid #a5f3fc;
+      color: #0f766e;
+      border-radius: 16px;
+      padding: 18px 20px;
+      margin-top: 24px;
+      font-weight: 600;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <section class="hero">
+      <div class="hero-top">
+        <span class="badge">Situação 3</span>
+        <h1>Falta de apoio e comunicação</h1>
+        <p class="subtitulo">
+          Quando o profissional não encontra um canal de escuta ou apoio, a insegurança cresce e a sensação de isolamento aumenta.
+        </p>
+      </div>
+
+      <div class="content">
+        <div class="grid">
+          <article class="card">
+            <h2>Consequências</h2>
+            <ul>
+              <li>Dificuldade em compartilhar dúvidas e inquietações.</li>
+              <li>Sentimento de abandono ou desvalorização.</li>
+              <li>Maior risco de erros por falta de orientação.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h2>O que costuma aparecer</h2>
+            <ul>
+              <li>Silêncio por medo de represália.</li>
+              <li>Insegurança para pedir ajuda.</li>
+              <li>Dificuldade em entender responsabilidades.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h2>Estratégias</h2>
+            <ul>
+              <li>Estabelecer canais claros de comunicação.</li>
+              <li>Promover escuta ativa e orientação acessível.</li>
+              <li>Fortalecer a articulação entre equipe e liderança.</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="alerta">
+          O apoio adequado reduz o sofrimento e melhora a capacidade de resposta diante dos desafios do trabalho.
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

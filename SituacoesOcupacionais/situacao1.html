@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Situação 1</title>
+  <style>
+    :root {
+      --bg: #f4f7fb;
+      --card: #ffffff;
+      --azul: #1d4ed8;
+      --azul-escuro: #14213d;
+      --cinza: #5f6c7b;
+      --borda: #dfe7f3;
+      --destaque: #eff6ff;
+      --sombra: 0 18px 40px rgba(20, 33, 61, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, #eef4ff 0%, #f7f9fc 100%);
+      color: var(--azul-escuro);
+    }
+
+    .container {
+      max-width: 980px;
+      margin: 48px auto;
+      padding: 24px;
+    }
+
+    .hero {
+      background: var(--card);
+      border: 1px solid var(--borda);
+      border-radius: 24px;
+      box-shadow: var(--sombra);
+      overflow: hidden;
+    }
+
+    .hero-top {
+      background: linear-gradient(135deg, var(--azul) 0%, #3b82f6 100%);
+      color: white;
+      padding: 32px 30px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    h1 {
+      margin: 18px 0 10px;
+      font-size: clamp(2rem, 4vw, 3rem);
+    }
+
+    .subtitulo {
+      margin: 0;
+      font-size: 1rem;
+      opacity: 0.95;
+      max-width: 700px;
+      line-height: 1.6;
+    }
+
+    .content {
+      padding: 28px 30px 38px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      margin-top: 10px;
+    }
+
+    .card {
+      background: var(--destaque);
+      border: 1px solid var(--borda);
+      border-radius: 18px;
+      padding: 22px 20px;
+    }
+
+    .card h2 {
+      margin-top: 0;
+      font-size: 1.1rem;
+      color: var(--azul-escuro);
+    }
+
+    .card p, .card li {
+      color: var(--cinza);
+      line-height: 1.6;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .alerta {
+      background: #fff7ed;
+      border: 1px solid #fed7aa;
+      color: #9a4d07;
+      border-radius: 16px;
+      padding: 18px 20px;
+      margin-top: 24px;
+      font-weight: 600;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <section class="hero">
+      <div class="hero-top">
+        <span class="badge">Situação 1</span>
+        <h1>Trabalho excessivo e rotina desgastante</h1>
+        <p class="subtitulo">
+          Quando a exigência de tarefas se torna constante e não há espaço para descanso,
+          a pessoa pode ficar emocionalmente esgotada e menos capaz de lidar com a rotina.
+        </p>
+      </div>
+
+      <div class="content">
+        <div class="grid">
+          <article class="card">
+            <h2>O que pode acontecer</h2>
+            <ul>
+              <li>Fadiga física e emocional constante.</li>
+              <li>Dificuldade em descansar e recuperar energia.</li>
+              <li>Baixa concentração e irritabilidade frequente.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h2>Sinais comuns</h2>
+            <ul>
+              <li>Exaustão mesmo após o fim do expediente.</li>
+              <li>Sentimento de culpa ao descansar.</li>
+              <li>Perda de motivação diante de tarefas simples.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h2>O que ajuda</h2>
+            <ul>
+              <li>Organizar prioridades e estabelecer limites.</li>
+              <li>Solicitar pausas mais efetivas durante a jornada.</li>
+              <li>Buscar apoio profissional quando o cansaço persistir.</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="alerta">
+          Importante: a sobrecarga contínua pode afetar saúde mental, produtividade e bem-estar geral.
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

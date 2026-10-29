@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Situação 2</title>
+  <style>
+    :root {
+      --bg: #fdf2f8;
+      --card: #ffffff;
+      --rosa: #db2777;
+      --roxo: #4c1d95;
+      --cinza: #5d6475;
+      --borda: #f7d6e8;
+      --destaque: #fff1f7;
+      --sombra: 0 18px 40px rgba(76, 29, 149, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, #fff0f7 0%, #f9fafb 100%);
+      color: var(--roxo);
+    }
+
+    .container {
+      max-width: 980px;
+      margin: 48px auto;
+      padding: 24px;
+    }
+
+    .hero {
+      background: var(--card);
+      border: 1px solid var(--borda);
+      border-radius: 24px;
+      box-shadow: var(--sombra);
+      overflow: hidden;
+    }
+
+    .hero-top {
+      background: linear-gradient(135deg, var(--rosa) 0%, #ec4899 100%);
+      color: white;
+      padding: 32px 30px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    h1 {
+      margin: 18px 0 10px;
+      font-size: clamp(2rem, 4vw, 3rem);
+    }
+
+    .subtitulo {
+      margin: 0;
+      font-size: 1rem;
+      opacity: 0.96;
+      max-width: 700px;
+      line-height: 1.6;
+    }
+
+    .content {
+      padding: 28px 30px 38px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--destaque);
+      border: 1px solid var(--borda);
+      border-radius: 18px;
+      padding: 22px 20px;
+    }
+
+    .card h2 {
+      margin-top: 0;
+      font-size: 1.1rem;
+      color: var(--roxo);
+    }
+
+    .card p, .card li {
+      color: var(--cinza);
+      line-height: 1.6;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .alerta {
+      background: #fef3c7;
+      border: 1px solid #facc15;
+      color: #92400e;
+      border-radius: 16px;
+      padding: 18px 20px;
+      margin-top: 24px;
+      font-weight: 600;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <section class="hero">
+      <div class="hero-top">
+        <span class="badge">Situação 2</span>
+        <h1>Ambiente de trabalho hostil</h1>
+        <p class="subtitulo">
+          Quando a convivência no ambiente profissional é marcada por pressão, discriminação ou humilhação,
+          o trabalhador pode passar a se sentir inseguro e constantemente em alerta.
+        </p>
+      </div>
+
+      <div class="content">
+        <div class="grid">
+          <article class="card">
+            <h2>Riscos</h2>
+            <ul>
+              <li>Perda de autoestima e confiança.</li>
+              <li>Ansiedade antes de entrar no ambiente de trabalho.</li>
+              <li>Baixa qualidade de vida e isolamento social.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h2>Comportamentos frequentes</h2>
+            <ul>
+              <li>Evitar conversar com colegas ou supervisores.</li>
+              <li>Sentir medo de ser julgado ou criticado.</li>
+              <li>Se sentir constantemente pressionado.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h2>Como agir</h2>
+            <ul>
+              <li>Documentar situações de conflito ou abuso.</li>
+              <li>Buscar suporte de alguém de confiança.</li>
+              <li>Denunciar ou buscar orientação adequada.</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="alerta">
+          Um ambiente de trabalho saudável deve respeitar dignidade, segurança e equilíbrio emocional.
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

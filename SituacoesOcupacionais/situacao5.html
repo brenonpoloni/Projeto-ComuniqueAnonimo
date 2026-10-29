@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Situação 5</title>
+  <style>
+    :root {
+      --bg: #f3e8ff;
+      --card: #ffffff;
+      --roxo: #7c3aed;
+      --roxo-escuro: #312e81;
+      --cinza: #5d6475;
+      --borda: #ddd6fe;
+      --destaque: #f5f3ff;
+      --sombra: 0 18px 40px rgba(124, 58, 237, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, #f5f3ff 0%, #f9fafb 100%);
+      color: var(--roxo-escuro);
+    }
+
+    .container {
+      max-width: 980px;
+      margin: 48px auto;
+      padding: 24px;
+    }
+
+    .hero {
+      background: var(--card);
+      border: 1px solid var(--borda);
+      border-radius: 24px;
+      box-shadow: var(--sombra);
+      overflow: hidden;
+    }
+
+    .hero-top {
+      background: linear-gradient(135deg, var(--roxo) 0%, #a78bfa 100%);
+      color: white;
+      padding: 32px 30px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    h1 {
+      margin: 18px 0 10px;
+      font-size: clamp(2rem, 4vw, 3rem);
+    }
+
+    .subtitulo {
+      margin: 0;
+      font-size: 1rem;
+      opacity: 0.96;
+      max-width: 700px;
+      line-height: 1.6;
+    }
+
+    .content {
+      padding: 28px 30px 38px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--destaque);
+      border: 1px solid var(--borda);
+      border-radius: 18px;
+      padding: 22px 20px;
+    }
+
+    .card h2 {
+      margin-top: 0;
+      font-size: 1.1rem;
+      color: var(--roxo-escuro);
+    }
+
+    .card p, .card li {
+      color: var(--cinza);
+      line-height: 1.6;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .alerta {
+      background: #f3e8ff;
+      border: 1px solid #c4b5fd;
+      color: #5b21b6;
+      border-radius: 16px;
+      padding: 18px 20px;
+      margin-top: 24px;
+      font-weight: 600;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <section class="hero">
+      <div class="hero-top">
+        <span class="badge">Situação 5</span>
+        <h1>Perda de autonomia e sentido</h1>
+        <p class="subtitulo">
+          Quando a pessoa sente que não tem controle sobre o próprio ritmo, decisões e bem-estar, a rotina pode parecer sem direção.
+        </p>
+      </div>
+
+      <div class="content">
+        <div class="grid">
+          <article class="card">
+            <h2>O que isso causa</h2>
+            <ul>
+              <li>Baixa sensação de propósito.</li>
+              <li>Desmotivação e afastamento das metas.</li>
+              <li>Dificuldade em reconhecer conquistas pessoais.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h2>Fatores comuns</h2>
+            <ul>
+              <li>Falta de liberdade para decidir.</li>
+              <li>Excesso de exigência sem reconhecimento.</li>
+              <li>Ritmo de trabalho que não respeita limites.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h2>Reconstruir</h2>
+            <ul>
+              <li>Reavaliar prioridades e objetivos.</li>
+              <li>Definir limites claros e realistas.</li>
+              <li>Buscar espaços de reflexão e suporte emocional.</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="alerta">
+          A autonomia é essencial para o bem-estar profissional e para a sensação de dignidade no trabalho.
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
