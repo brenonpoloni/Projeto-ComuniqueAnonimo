@@ -1,0 +1,8 @@
+{
+  "name": "comunique-anonimo/site",
+  "description": "Projeto Comunique Anônimo",
+  "require": {
+    "php": ">=7.4",
+    "phpmailer/phpmailer": "^6.9"
+  }
+}

@@ -1,16 +1,30 @@
 <?php
-session_start();
-$estaLogado = isset($_SESSION['usuario_logado']) && $_SESSION['usuario_logado'] === true;
-$usuario = $estaLogado ? $_SESSION['usuario'] : null;
+require __DIR__ . '/config.php';
+
+$usuario = null;
+$ultimoAcesso = '—';
+
+if (!empty($_SESSION['usuario_id'])) {
+    $stmt = $pdo->prepare('SELECT * FROM usuarios WHERE id = :id LIMIT 1');
+    $stmt->execute([':id' => $_SESSION['usuario_id']]);
+    $usuario = $stmt->fetch();
+
+    if ($usuario) {
+        $pdo->prepare('UPDATE usuarios SET ultimo_acesso = NOW() WHERE id = :id')->execute([':id' => $usuario['id']]);
+        $ultimoAcesso = !empty($usuario['ultimo_acesso']) ? date('d/m/Y H:i', strtotime($usuario['ultimo_acesso'])) : '—';
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comunique Anônimo - Conta</title>
+    <title>Comunique Anônimo</title>
     <link rel="stylesheet" href="css/conta.css">
 </head>
+
 <body>
 
     <?php include 'header.php'; ?>
@@ -24,12 +38,7 @@ $usuario = $estaLogado ? $_SESSION['usuario'] : null;
             </div>
 
             <div class="lado-direito-hero">
-                <!-- BOTÃO DE ENTRAR/SAIR DO HERO -->
-                <?php if ($estaLogado): ?>
-                    <a href="logout.php" class="btn-entrar-topo" style="text-decoration:none;">🚪 Sair</a>
-                <?php else: ?>
-                    <a href="login.php" class="btn-entrar-topo" style="text-decoration:none;">➡️ Entrar</a>
-                <?php endif; ?>
+                <a href="logout.php" class="btn-entrar-topo">🚪 Sair</a>
 
                 <div class="box-protecao">
                     <div class="icone-escudo">🛡️</div>
@@ -50,41 +59,44 @@ $usuario = $estaLogado ? $_SESSION['usuario'] : null;
                     <h2>Minha conta</h2>
                 </div>
                 <p>Suas informações pessoais e de acesso, em um só lugar.</p>
-                <span class="badge-status" style="color: <?= $estaLogado ? '#1f7a3f' : '#4b5563' ?>;">
-                    <?= $estaLogado ? '• Conectado' : '• Não conectado' ?>
-                </span>
+                <span class="badge-status">• Conectado</span>
             </div>
 
-            <div class="card-perfil-usuario">
-                <div class="avatar-circle">👤</div>
-                <div class="grid-dados-usuario">
-                    <div class="item-dado">
-                        <span class="label-dado">Nome</span>
-                        <span class="valor-dado"><?= $estaLogado ? htmlspecialchars($usuario['nome']) : 'Não informado' ?></span>
-                    </div>
-                    <div class="item-dado">
-                        <span class="label-dado">E-mail</span>
-                        <span class="valor-dado"><?= $estaLogado ? htmlspecialchars($usuario['email']) : 'Não informado' ?></span>
-                    </div>
-                    <div class="item-dado">
-                        <span class="label-dado">Tipo de conta</span>
-                        <span class="valor-dado"><?= $estaLogado ? htmlspecialchars($usuario['cargo']) : 'Não identificado' ?></span>
-                    </div>
-                    <div class="item-dado">
-                        <span class="label-dado">Último acesso</span>
-                        <span class="valor-dado"><?= $estaLogado ? htmlspecialchars($usuario['ultimo_acesso']) : '—' ?></span>
-                    </div>
-                    
-                    <!-- LINK DE AÇÃO DO PERFIL -->
-                    <div class="item-dado full-width">
-                        <?php if ($estaLogado): ?>
+            <?php if ($usuario): ?>
+                <div class="card-perfil-usuario">
+                    <div class="avatar-circle">👤</div>
+                    <div class="grid-dados-usuario">
+                        <div class="item-dado">
+                            <span class="label-dado">Nome</span>
+                            <span class="valor-dado"><?= h($usuario['nome']) ?></span>
+                        </div>
+                        <div class="item-dado">
+                            <span class="label-dado">E-mail</span>
+                            <span class="valor-dado"><?= h($usuario['email']) ?></span>
+                        </div>
+                        <div class="item-dado">
+                            <span class="label-dado">Tipo de conta</span>
+                            <span class="valor-dado"><?= h(ucfirst($usuario['tipo_conta'])) ?></span>
+                        </div>
+                        <div class="item-dado">
+                            <span class="label-dado">Último acesso</span>
+                            <span class="valor-dado"><?= h($ultimoAcesso) ?></span>
+                        </div>
+                        <div class="item-dado full-width">
                             <a href="logout.php" class="link-acao">Sair da minha conta &rarr;</a>
-                        <?php else: ?>
-                            <a href="login.php" class="link-acao">Entrar na minha conta &rarr;</a>
-                        <?php endif; ?>
+                        </div>
                     </div>
                 </div>
-            </div>
+            <?php else: ?>
+                <div class="card-perfil-usuario" style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 18px;">
+                    <div class="avatar-circle">🔒</div>
+                    <div>
+                        <h3 style="margin: 0 0 8px; color: #0b1d3d;">Você ainda não está conectado.</h3>
+                        <p style="margin: 0; color: #4a5872;">Para visualizar suas informações pessoais, faça login ou crie uma conta.</p>
+                    </div>
+                    <a href="login.php" class="btn-entrar-topo">Entrar ou criar conta</a>
+                </div>
+            <?php endif; ?>
         </section>
 
         <hr class="divisor-secao">
@@ -99,20 +111,70 @@ $usuario = $estaLogado ? $_SESSION['usuario'] : null;
                     </div>
                     <p>Gestão de denúncias de segurança e saúde no trabalho.</p>
                 </div>
-                <!-- BOTÃO TÉCNICO NO CABEÇALHO -->
-                <a href="login.php" class="btn-acessar-tecnico" style="text-decoration:none;">🔑 Acessar como técnico &rarr;</a>
+                <a href="areaTST.php" class="btn-acessar-tecnico">🔑 Acessar como técnico &rarr;</a>
+            </div>
+
+            <div class="grid-metricas">
+                <?php
+                $totalDenuncias = (int) $pdo->query('SELECT COUNT(*) FROM denuncias')->fetchColumn();
+                $denunciasPendentes = (int) $pdo->query("SELECT COUNT(*) FROM denuncias WHERE status = 'pendente'")->fetchColumn();
+                $denunciasAndamento = (int) $pdo->query("SELECT COUNT(*) FROM denuncias WHERE status = 'em_andamento'")->fetchColumn();
+                $denunciasConcluidas = (int) $pdo->query("SELECT COUNT(*) FROM denuncias WHERE status = 'concluida'")->fetchColumn();
+                ?>
+
+                <div class="card-metrica">
+                    <div class="info-metrica">
+                        <span>Denúncias recebidas</span>
+                        <div class="linha-vazia"><?= $totalDenuncias ?></div>
+                    </div>
+                    <span class="icone-card-metrica">📄</span>
+                </div>
+
+                <div class="card-metrica">
+                    <div class="info-metrica">
+                        <span>Aguardando análise</span>
+                        <div class="linha-vazia"><?= $denunciasPendentes ?></div>
+                    </div>
+                    <span class="icone-card-metrica">⏱️</span>
+                </div>
+
+                <div class="card-metrica">
+                    <div class="info-metrica">
+                        <span>Em andamento</span>
+                        <div class="linha-vazia"><?= $denunciasAndamento ?></div>
+                    </div>
+                    <span class="icone-card-metrica">🔍</span>
+                </div>
+
+                <div class="card-metrica">
+                    <div class="info-metrica">
+                        <span>Concluídas</span>
+                        <div class="linha-vazia"><?= $denunciasConcluidas ?></div>
+                    </div>
+                    <span class="icone-card-metrica">📑</span>
+                </div>
+            </div>
+
+            <div class="barra-tabs">
+                <div class="tabs">
+                    <button class="tab-btn active" type="button">Todas</button>
+                    <button class="tab-btn" type="button">Pendentes</button>
+                    <button class="tab-btn" type="button">Em andamento</button>
+                    <button class="tab-btn" type="button">Concluídas</button>
+                </div>
+                <div class="dados-protegidos">🔒 Dados protegidos</div>
             </div>
 
             <div class="box-bloqueio-tecnico">
                 <div class="icone-cadeado-circulo">🔒</div>
                 <h3>Um espaço seguro para cuidar de todos.</h3>
                 <p>As denúncias estão disponíveis apenas para técnicos autorizados.<br>Entre com sua conta profissional para acessar as informações.</p>
-                <!-- BOTÃO TÉCNICO NO CARD -->
-                <a href="login.php" class="btn-entrar-area-tecnica" style="text-decoration:none;">Entrar na área técnica &rarr;</a>
+                <a href="areaTST.php" class="btn-entrar-area-tecnica">Entrar na área técnica &rarr;</a>
             </div>
         </section>
     </main>
 
     <script src="script.js"></script>
 </body>
+
 </html>

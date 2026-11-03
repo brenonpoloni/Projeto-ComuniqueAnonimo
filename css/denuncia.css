@@ -103,6 +103,45 @@ body {
     margin: 0 0 30px 0;
 }
 
+.mensagem-sucesso,
+.mensagem-erro,
+.mensagem-alerta {
+    padding: 10px 12px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.mensagem-sucesso {
+    background: #eafaf1;
+    color: #1a5e35;
+}
+
+.mensagem-erro,
+.mensagem-alerta {
+    background: #fdecea;
+    color: #b71c1c;
+}
+
+.area-acompanhamento-rapido {
+    margin: 0 0 22px;
+}
+
+.btn-acompanhamento {
+    display: inline-block;
+    background-color: #000086;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 12px 18px;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+}
+
+.btn-acompanhamento:hover {
+    background-color: #0000a8;
+}
+
 /* Formulário e Campos */
 .form-denuncia {
     display: flex;
@@ -186,6 +225,9 @@ body {
     border-radius: 6px;
     cursor: pointer;
     transition: background-color 0.2s;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
 }
 
 .btn-voltar:hover {
@@ -208,19 +250,143 @@ body {
     background-color: #e6b800;
 }
 
-/* Estilização para transformar os links do menu em botões estilizados */
-.menu-de-denuncia a.botao-menu {
-    text-decoration: none;
-    display: inline-block;
-    color: #ffffff;
-    font-weight: bold;
-    padding: 10px 15px;
-    border-bottom: 2px solid transparent;
-    transition: all 0.2s ease;
+.resultado-acompanhamento {
+    background: #f7f9ff;
+    border: 1px solid #dfe6ff;
+    border-radius: 14px;
+    padding: 24px;
+    margin-top: 30px;
 }
 
-.menu-de-denuncia a.botao-menu.ativo,
-.menu-de-denuncia a.botao-menu:hover {
-    color: #FFCD00 !important;
-    border-bottom: 2px solid #FFCD00 !important;
+.resultado-acompanhamento h2 {
+    color: #000086;
+    margin: 0 0 18px;
+    font-size: 1.5rem;
+}
+
+.linha-status {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.status-badge,
+.nivel-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-size: 0.75rem;
+}
+
+.status-badge.pendente {
+    background-color: #fff4d6;
+    color: #8a6200;
+}
+
+.status-badge.em_andamento {
+    background-color: #eaf3ff;
+    color: #0051a8;
+}
+
+.status-badge.concluida {
+    background-color: #eafaf1;
+    color: #1a5e35;
+}
+
+.nivel-badge.grave {
+    background-color: #ffe3e3;
+    color: #a42525;
+}
+
+.nivel-badge.intermediario {
+    background-color: #fff4d6;
+    color: #8a6200;
+}
+
+.nivel-badge.estavel {
+    background-color: #eafaf1;
+    color: #1a5e35;
+}
+
+.grid-detalhes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.grid-detalhes > div {
+    background: #ffffff;
+    border: 1px solid #edf0ff;
+    border-radius: 10px;
+    padding: 14px 16px;
+}
+
+.grid-detalhes span {
+    display: block;
+    color: #666666;
+    font-size: 0.75rem;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.grid-detalhes strong {
+    color: #111111;
+    font-size: 0.98rem;
+    line-height: 1.5;
+}
+
+.box-analise {
+    background: #ffffff;
+    border: 1px solid #edf0ff;
+    border-radius: 10px;
+    padding: 18px 20px;
+}
+
+.box-analise h3 {
+    margin: 0 0 10px;
+    color: #0e0e0e;
+    font-size: 1.1rem;
+}
+
+.box-analise p {
+    margin: 0;
+    color: #333333;
+    line-height: 1.7;
+}
+
+.nivel-descricao {
+    margin-top: 12px !important;
+    font-weight: 600;
+}
+
+.nivel-descricao.grave {
+    color: #a42525 !important;
+}
+
+.nivel-descricao.intermediario {
+    color: #8a6200 !important;
+}
+
+.nivel-descricao.estavel {
+    color: #1a5e35 !important;
+}
+
+@media (max-width: 600px) {
+    .botoes-formulario {
+        flex-direction: column;
+    }
+
+    .btn-voltar,
+    .btn-enviar,
+    .btn-acompanhamento {
+        width: 100%;
+    }
 }

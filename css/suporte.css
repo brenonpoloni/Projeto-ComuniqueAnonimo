@@ -110,16 +110,13 @@ body {
 .item-faq {
     background-color: #f8f9fa;
     border: 1px solid #e2e8f0;
-    border-radius: 8px;
-    padding: 16px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: bold;
+    border-radius: 10px;
+    padding: 0;
     color: #1a1a1a;
     font-size: 0.95rem;
     cursor: pointer;
-    transition: background-color 0.2s, border-color 0.2s;
+    transition: all 0.2s ease;
+    overflow: hidden;
 }
 
 .item-faq:hover {
@@ -127,10 +124,47 @@ body {
     border-color: #cbd5e1;
 }
 
+.faq-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 20px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.faq-header span:first-child {
+    flex: 1;
+}
+
+.faq-resposta {
+    display: none;
+    padding: 0 20px 18px;
+    color: #4a4a4a;
+    line-height: 1.7;
+    font-weight: 400;
+    border-top: 1px solid #edf2f7;
+    background: #fff;
+}
+
+.item-faq[data-aberto="true"] .faq-resposta {
+    display: block;
+}
+
+.item-faq[data-aberto="true"] .icone-expandir {
+    transform: rotate(45deg);
+}
+
 .icone-expandir {
     color: #0000b3;
-    font-size: 1.2rem;
-    font-weight: bold;
+    font-size: 1.7rem;
+    font-weight: 700;
+    transition: transform 0.2s ease;
+    display: inline-block;
+    line-height: 1;
+    min-width: 20px;
+    text-align: center;
 }
 
 /* Estilos do Formulário de Contato */

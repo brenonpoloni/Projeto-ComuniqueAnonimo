@@ -37,6 +37,9 @@
         </div>
     </main>
 
+    <script>
+        window.__redirectDenuncia = "denuncia.php";
+    </script>
     <script src="script.js"></script>
 </body>
 </html>
